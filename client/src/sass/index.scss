@@ -1,0 +1,60 @@
+@import "reset";
+
+#side-menu {
+  background: #000;
+  width: 180px;
+  height: 100vh;
+  display: block;
+  position: absolute;
+  left: 180px;
+  top: 0px;
+  transition: right 0.4s linear;
+
+  .btn-close {
+    font-size: 30px;
+  }
+
+  a {
+    background: #000;
+    color: #fff;
+    border-bottom: 1px solid #111;
+    display: block;
+    width: 180px;
+    padding: 10px 0;
+    font-size: 22px;
+    text-align: center;
+    text-decoration: none;
+
+    :hover {
+      text-decoration: none;
+      // color: #6352b0;
+    }
+  }
+}
+
+#side-btn {
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 15px;
+  margin-left: 8px;
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  left: 0px;
+
+  span {
+    display: block;
+    height: 4px;
+    background: #111;
+    margin-bottom: 5px;
+
+    // span:nth-child(2) {
+    //   width: 75%
+    // }
+    //
+    // span:nth-child(3) {
+    //   width: 50%
+    // }
+  }
+}
