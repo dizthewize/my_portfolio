@@ -50,7 +50,7 @@ body {
   }
 
   .bottom {
-    background: #222;
+    background: rgba(27, 97, 122, 1);
     z-index: 1;
 
     .content-body {
@@ -78,7 +78,7 @@ body {
     position: absolute;
     height: 100%;
     display: block;
-    background-color: #fdab00;
+    // background-color: #ccc;
     width: 4px;
     top: 0;
     left: 50%;
