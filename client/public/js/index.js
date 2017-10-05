@@ -5,7 +5,7 @@ function openSideMenu() {
 
 function closeSideMenu() {
   document.getElementById('side-menu').style.left = '0px';
-  document.getElementById('side-btn').style.marginLeft = '0px';
+  document.getElementById('side-btn').style.left = '0px';
 }
 
 document.addEventListener('DOMContentLoaded', function() {

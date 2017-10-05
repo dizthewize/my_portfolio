@@ -31,17 +31,46 @@
 </section>
 
 <section id="projects">
-  <img src="#" alt="" class="screenshot">
-  <a href="#" class="project-link">View Project</a>
-  <!--TODO: Add arrow icon next to view project text  -->
-  <h1 class="big-title">Hello World</h1>
-  <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit beatae voluptas commodi quam, dignissimos eos sequi, reiciendis saepe perferendis quas!</p>
+  <a href="https://placeholder.com"><img class="animated bounceInLeft" src="http://via.placeholder.com/650x1000"></a>
+  <a href="#" class="project-link">View Project <i class="ion-arrow-right-c"></i></a>
+  <div class="container">
+    <i id="nextarrow" class="ion-arrow-right-c"></i>
+    <h1 class="big-title animated bounceInUp">Hello World</h1>
+    <p class="description animated bounceInRight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit beatae voluptas commodi quam, dignissimos eos sequi, reiciendis saepe perferendis quas!</p>
+  </div>
 </section>
 
-{{!-- <section id="hire-me">
-  <h1>Looking to contact me?</h1>
-  <form>
-    <input type="email" name="email" placeholder="Enter Email">
-    <button type="submit" class="hire-btn">Hire Me</button>
-  </form>
-</section> --}}
+<section id="contact">
+  <div class="container">
+    <div class="wrap">
+      <div class="info">
+        <h1 class="hiring">Hiring? Send me an email</h1>
+      </div>
+        <form>
+          <p>
+            <label>Name</label>
+            <input type="text" name="name">
+          </p>
+          <p>
+            <label>Company</label>
+            <input type="text" name="company">
+          </p>
+          <p>
+            <label>Email Address</label>
+            <input type="email" name="email">
+          </p>
+          <p>
+            <label>Phone Number</label>
+            <input type="text" name="phone">
+          </p>
+          <p class="wide">
+            <label>Message</label>
+            <textarea name="message" rows="5"></textarea>
+          </p>
+          <p class="wide">
+            <button type="submit">Submit</button>
+          </p>
+        </form>
+    </div>
+  </div>
+</section>

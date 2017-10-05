@@ -1,13 +1,23 @@
 @import "reset";
-@import "grid";
 @import "variables";
+@import "grid";
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   background: #fefefe;
   margin: 0;
   padding: 0;
+  line-height: 1.6;
   font-size: 100%;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 #wrapped {
@@ -140,11 +150,11 @@ body {
   vertical-align: middle;
   width: 24px;
   height: 15px;
-  margin-left: 8px;
+  // margin-left: 8px;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   top: 45%;
-  left: 0px;
+  left: 8px;
   transition: 0.6s;
   z-index: 3;
 
@@ -164,46 +174,122 @@ body {
   }
 }
 
-// #hire-me {
-//   padding: 15px;
-//   background: rgba(27, 97, 122, 1);
-//   color: black;
-//   overflow: auto;
-//
-//
-//   h1 {
-//     float: left;
-//     text-align: center;
-//   }
-//
-//   form {
-//     float: right;
-//     text-align: center;
-//   }
-//
-//   input[type="email"] {
-//     padding: 4px;
-//     height: 25px;
-//     width: 275px;
-//     font-size: 18px;
-//
-//     &:focus {
-//       outline: none;
-//     }
-//   }
-//
-//   .hire-btn {
-//     height: 38px;
-//     background: #eee;
-//     border: 0;
-//     padding-left: 20px;
-//     padding-right: 20px;
-//     color: rgba(27, 97, 122, 1);
-//   }
-// }
+#projects {
+  overflow: auto;
+
+  img {
+    float: left;
+    margin-left: 180px;
+  }
+
+  .project-link {
+    text-decoration: none;
+    position: relative;
+    top: 58em;
+    left: -9em;
+  }
+
+  .big-title {
+    font-size: 4em;
+    text-transform: uppercase;
+    position: relative;
+    left: -3.5em;
+    top: 4em;
+  }
+
+  #nextarrow {
+    font-size: 3em;
+    position: relative;
+    top: 10em;
+    right: -25em;
+    cursor: pointer;
+  }
+
+  .description {
+    font-size: 1.5em;
+    position: relative;
+    top: 28em;
+    left: 1em;
+  }
+}
+
+#contact {
+  background: #eee;
+  padding: 4em 0;
+
+  .container {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+  }
+
+  .wrap {
+    box-shadow: 0 0 15px 0 rgba(27, 97, 122, 0.7)
+  }
+
+  .wrap > * {
+    padding: 1em;
+  }
+  .hiring {
+    text-align: center;
+    font-size: 3em;
+  }
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+
+    label {
+      display: block;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    button {
+      cursor: pointer;
+      color: #fefefe;
+      border: 0;
+      background: rgba(27, 97, 122, 1);
+      text-transform: uppercase;
+
+      &:hover,
+      &:focus {
+        background: #fdab00;
+        color: black;
+        outline: 0;
+        transition: background-color 0.3s ease-out;
+      }
+    }
+
+    .wide {
+      grid-column: 1 / 3;
+    }
+
+    button,
+    input,
+    textarea {
+      width: 100%;
+      padding: 1em;
+    }
+  }
+}
 
 @media (max-width: 768px) {
   body {
     font-size: 75%;
+  }
+}
+
+@media(min-width: 700px) {
+  .wrap {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .wrap > * {
+    padding: 2.5em;
   }
 }
