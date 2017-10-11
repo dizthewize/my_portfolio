@@ -1,0 +1,42 @@
+#AdminMenu {
+  background: $lightPurple;
+  width: 250px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  nav {
+    padding-top: 130px;
+
+    a {
+      display: block;
+      color: $lightGrey;
+      text-decoration: none;
+      padding: 15px 30px;
+      font-weight: 300;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+       background: $darkPurple;
+        border-left: 5px solid $neonGreen;
+        padding: 15px 30px 15px 25px;
+        .fa {
+          color:$neonGreen;
+        }
+      }
+
+      .ion {
+        color:$darkGrey;
+        font-size: 1.3rem;
+        margin-right: 0.9rem;
+        display: inline-block;
+        width: 30px;
+        position: relative;
+        top: 2px;
+      }
+      &.active {
+        background: $darkPurple;
+        border-left: 5px solid $neonGreen;
+        padding: 15px 30px 15px 25px;
+      }
+    }
+  }
+}
