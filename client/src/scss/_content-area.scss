@@ -1,0 +1,81 @@
+body {
+  color: $gray;
+  font-family: $ffText;
+  line-height: 1.6;
+  background: $white;
+  font-size: .875rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2, p {
+  margin-top: 0;
+  margin-bottom: .75em;
+}
+
+h1 {
+  color: $accent;
+  line-height: 1;
+  font-size: 3.125rem;
+}
+
+h2 {
+  @include sans-serif($fs: 2rem);
+}
+
+.welcome {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: $fwNormal;
+    color: $darkBlue;
+    line-height: 2;
+    text-align: center;
+
+    span {
+      @include sans-serif($fs: 5.5rem, $color: $accent);
+      display: block;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      width: 80%;
+      height: 1px;
+      background: $darkBlue;
+      display: block;
+    }
+
+    &::before {
+      margin: 0 auto 2em;
+    }
+
+    &::after {
+      margin: 2em auto 0;
+    }
+  }
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .intro-text {
+    margin: 0 auto;
+    text-align: center;
+    background: $darkBlue;
+    padding: 2rem;
+    color: rgba($white, .8);
+
+    h2 {
+      color: $white;
+    }
+  }
+}

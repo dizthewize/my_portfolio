@@ -1,22 +1,15 @@
 import React from 'react';
 
-const AboutSection = (props) => (
-  <section id="about-me">
-    <div className="container">
-      <div className="content-area">
-        <div className="row">
-
-          <div className="col-md-6 unique">
-            <h1 className="title animated bounceInUp">About Me</h1>
-          </div>
-
-          <div className="col-md-6">
-            <p className="description animated bounceInRight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit beatae voluptas commodi quam, dignissimos eos sequi, reiciendis saepe perferendis quas!</p>
-          </div>
-      </div>
-      </div>
+const AboutMe = () => (
+  <section class="about-me">
+    <img src="img/portrait_1.jpg" alt="picture of myself in suit" />
+    <h2 class="about-title">Martez Conner</h2>
+    <h3 class="about-subtitle"></h3>
+    <div class="about-text">
+      <p><div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio mollitia id ipsam maiores! Nulla rerum modi sapiente vel ut alias?</div></p>
+    <p><div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio mollitia id ipsam maiores! Nulla rerum modi sapiente vel ut alias?</div></p>
     </div>
   </section>
 );
 
-export default AboutSection;
+export default AboutMe;
