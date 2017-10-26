@@ -8,11 +8,18 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
-h1, h2, p {
+h1, h2, h3, p {
   margin-top: 0;
-  margin-bottom: .75em;
+
+}
+
+h1, h2, h3, p, span {
+  &::selection{
+    background: $medium-gray;
+  }
 }
 
 h1 {
@@ -22,25 +29,36 @@ h1 {
 }
 
 h2 {
-  @include sans-serif($fs: 2rem);
+  font-size: 2rem;
 }
 
 .welcome {
   height: 100vh;
+  min-height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: $gray;
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 3.5rem;
     font-weight: $fwNormal;
     color: $darkBlue;
     line-height: 2;
     text-align: center;
 
     span {
-      @include sans-serif($fs: 5.5rem, $color: $accent);
+      font-size: 6.5rem;
+      color: $accent;
+      letter-spacing: 6.5px;
       display: block;
+      transition: all .5s ease-in;
+      cursor: pointer;
+
+      &:hover {
+        transition: all .5s ease-in;
+        color: $offsetOrange;
+      }
     }
 
     &::before,
@@ -53,29 +71,268 @@ h2 {
     }
 
     &::before {
-      margin: 0 auto 2em;
+      margin: 0 auto 1em;
     }
 
     &::after {
-      margin: 2em auto 0;
+      margin: 1em auto 0;
     }
   }
 }
 
 .intro {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  min-height: 700px;
+  width: 100%;
+  padding: 2em 0;
+  // background: $offsetOrange;
+  background: url("../img/ali_fight.jpg") no-repeat center top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   .intro-text {
+    max-width: 500px;
+    position: absolute;
+    top: 3%;
+    left: 4%;
+    text-align: center;
+    background: rgba($darkBlue, 0.7);
+    // padding: 2em;
+    color: rgba($white, .8);
+    font-size: 1.5em;
+  }
+}
+
+.about-me {
+  // @extend %container;
+  padding: 0 0 4em 0;
+  position: relative;
+}
+
+.about-title {
+  margin-bottom: .25em;
+  font-family: $ffHeading;
+  color: $accent;
+  position: absolute;
+  top: 1em;
+  right: 3.2em;
+  font-size: 3.5rem;
+}
+
+.about-subtitle {
+  font-size: 2rem;
+  letter-spacing: 0.4em;
+  margin: .4em 0;
+  color: $offsetOrange;
+}
+
+.about-text {
+  text-align: center;
+}
+
+.quote {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 700px;
+  width: 100%;
+  padding: 2em 0;
+  background: url("../img/mj.jpg") no-repeat center top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: $white;
+
+  .quote-text {
+    position: absolute;
+    top: 3%;
+    left: 4%;
+    max-width: 500px;
     margin: 0 auto;
     text-align: center;
-    background: $darkBlue;
-    padding: 2rem;
-    color: rgba($white, .8);
+    background: rgba($darkBlue, 0.7);
+    font-size: 1.5em;
+  }
+}
 
-    h2 {
-      color: $white;
+.portfolio {
+  // @extend %container;
+  padding: 2.5%;
+  height: 100vh;
+  background: $gray;
+}
+
+.projects {
+  display: grid;
+  height: 100%;
+  grid-template-rows: repeat(5, 1fr);
+  // grid-template-columns: repeat(6, 1fr);
+  grid-gap: 2px;
+
+  .project-item {
+    position: relative;
+    background: $offsetOrange;
+    color: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    &.small {
+      grid-row: span 1;
+      grid-column: span 2;
+    }
+
+    &.medium {
+      grid-row: span 2;
+      grid-column: span 2;
+    }
+
+    &.large {
+      grid-row: span 3;
+      grid-column: span ;
+    }
+
+    &.half {
+      grid-row: span 3;
+      grid-column: span 2;
+    }
+
+    &.tall {
+      grid-row: span 3;
+      grid-column: span 2;
+    }
+
+    &.wide {
+      grid-row: span 2;
+      grid-column: span 4;
+    }
+
+    .overlay {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: red;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      transition: all .5s ease-in;
+
+      &:hover {
+        transition: all .5s ease-in;
+        opacity: 1;
+      }
+
+
+      .project-title {
+        font-size: 1.55rem;
+        position: absolute;
+        top: 1rem;
+      }
+
+      .project-title,
+      .project-desc {
+        padding-bottom: 8px;
+      }
+
+      .project-desc {
+        text-align: center;
+        padding: 0.4rem;
+      }
+
+      .project-tech {
+        margin-left: 5px;
+        position: absolute;
+        bottom: 0;
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: $accent;
+      }
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .about-me {
+    display: block;
+    padding: 1em;
+    text-align: center;
+
+    .about-title {
+      position: initial;
+      font-size: 2.9rem;
+    }
+
+    .about-subtitle {
+      margin: 0 0 5px 0;
+      letter-spacing: 0.2em;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .welcome {
+    height: 500px;
+    h1 {
+      font-size: 2rem;
+
+      span {
+        font-size: 4.5rem;
+      }
+    }
+  }
+
+  .intro {
+    padding: .25rem;
+    width: 100%;
+    .intro-text {
+      max-width: 600px;
+      margin: 0 auto;
+      position: static;
+      text-align: center;
+    }
+  }
+  .about-me {
+    display: block;
+    padding: 1em;
+    text-align: center;
+
+    .about-title {
+      position: initial;
+      font-size: 1.9rem;
+    }
+
+    .about-subtitle {
+      margin: 0 0 5px 0;
+      letter-spacing: 0.2em;
+      font-size: 1.6rem;
+    }
+  }
+  .portfolio {
+    width: 100%;
+  }
+  .projects {
+    display: block;
+
+    .project-item {
+      padding: 10px 0;
+
+      .overlay {
+        display: block;
+        opacity: 1;
+        height: 100%;
+        width: 100%;
+      }
     }
   }
 }
