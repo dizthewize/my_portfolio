@@ -1,0 +1,109 @@
+@media (max-width: 900px) {
+  #nav {
+    .navbar-items {
+      display: none;
+    }
+  }
+
+  #drop-menu {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  #cta-btn, footer {
+    position: relative;
+  }
+
+  .welcome {
+    h1 {
+      font-size: 2rem;
+
+      span {
+        font-size: 4.5rem;
+      }
+    }
+  }
+
+  .intro,.quote {
+    padding: .25rem;
+    width: 100%;
+    .intro-text, .quote-text {
+      max-width: 600px;
+      margin: 0 auto;
+      position: static;
+      text-align: center;
+    }
+  }
+
+  .about-me {
+    display: block;
+    padding: 1em;
+    text-align: center;
+
+    .about-title {
+      position: initial;
+      font-size: 2rem;
+    }
+
+    .about-subtitle {
+      margin: 0 0 5px 0;
+      letter-spacing: 0.2em;
+      font-size: 1.6rem;
+    }
+  }
+  .portfolio {
+    height: 100%;
+    margin: 0 0 15px 0;
+    padding: 15px 0;
+    background: none;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .projects {
+      display: block;
+
+      .project-item {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 12px;
+
+        .overlay {
+          padding: .5em;
+          opacity: 1;
+          .project-title,
+          .project-desc,
+          .project-tech {
+            position: static;
+            margin: 0 auto;
+          }
+
+          .project-desc {
+            max-width: 500px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .about-me {
+    display: block;
+    padding: 1em;
+    text-align: center;
+
+    .about-title {
+      position: static;
+      font-size: 2.9rem;
+    }
+
+    .about-subtitle {
+      margin: 0 0 5px 0;
+      letter-spacing: 0.2em;
+      font-size: 1.6rem;
+    }
+  }
+}

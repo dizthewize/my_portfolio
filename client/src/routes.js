@@ -3,12 +3,11 @@ import { Switch, Route } from 'react-router-dom';
 import DropMenu from './components/dropmenu/drop-menu';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
-import SideMenu from './components/sidemenu/side-menu';
-import Home from './views/home';
-import About from './views/about';
-import Projects from './views/projects';
-import Contact from './views/contact';
-// import Admin from './views/admin';
+import Home from './components/views/home';
+import About from './components/views/about';
+import Projects from './components/views/projects';
+import Contact from './components/views/contact';
+// import Admin from './components/views/admin';
 
 const Routes = () => {
   return (

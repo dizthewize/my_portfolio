@@ -1,8 +1,24 @@
-@import "scss/reset";
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300,400|Overpass:300,400');
+
 @import "scss/variables";
 @import "scss/grid";
-@import "scss/base";
+@import "scss/reset";
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+@import "scss/partials";
+@import "scss/contact-form";
+@import "scss/content-area";
+@import "scss/queries";
+
 
 // admin component styles
-@import "views/admin/scss/admin-vars";
-@import "views/admin/scss/admin-menu";
+// @import "views/admin/scss/admin-vars";
+// @import "views/admin/scss/admin-menu";

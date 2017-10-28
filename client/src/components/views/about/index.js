@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import AboutMe from '../../components/about/about';
+import AboutMe from '../../about/about';
 
 class About extends Component {
   render() {
-    const title = 'Martez Conner';
     return (
       <div className="main">
-        <AboutMe />
+        <div className="container">
+          <div className="view-padding">
+            <AboutMe />
+          </div>
+        </div>
       </div>
     );
   }
