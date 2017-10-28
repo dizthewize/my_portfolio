@@ -604,6 +604,7 @@ h2 {
   width: 100%;
   padding: 2em 0;
   background: url("../img/ali_fight.jpg") no-repeat center top;
+  background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -621,24 +622,23 @@ h2 {
 .about-me {
   padding: 0 0 4em 0;
   position: relative; }
-
-.about-title {
-  margin-bottom: .25em;
-  font-family: "Alegreya Sans SC", sans-serif;
-  color: #A0CCE3;
-  position: absolute;
-  top: 1em;
-  right: 3.2em;
-  font-size: 3.5rem; }
-
-.about-subtitle {
-  font-size: 2rem;
-  letter-spacing: 0.4em;
-  margin: .4em 0;
-  color: #F66464; }
-
-.about-text {
-  text-align: center; }
+  .about-me .about-title {
+    position: absolute;
+    top: 1em;
+    right: 3.2em;
+    margin-bottom: .25em;
+    font-family: "Alegreya Sans SC", sans-serif;
+    color: #A0CCE3;
+    font-size: 3.5rem;
+    letter-spacing: 0.1em; }
+  .about-me .about-subtitle {
+    font-size: 2rem;
+    letter-spacing: 0.4em;
+    margin: .4em 0;
+    color: #F66464; }
+  .about-me .about-text {
+    text-align: center;
+    font-size: 1.1em; }
 
 .quote {
   position: relative;
@@ -649,6 +649,7 @@ h2 {
   width: 100%;
   padding: 2em 0;
   background: url("../img/mj.jpg") no-repeat center top;
+  background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -665,73 +666,76 @@ h2 {
     font-size: 1.5em; }
 
 .portfolio {
-  padding: 2.5%;
-  height: 100vh;
-  background: #a7a7a7; }
-
-.projects {
-  display: grid;
-  height: 100%;
-  grid-template-rows: repeat(5, 1fr);
-  grid-gap: 2px; }
-  .projects .project-item {
-    position: relative;
-    background: #F66464;
-    color: #353535;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; }
-    .projects .project-item.small {
-      grid-row: span 1;
-      grid-column: span 2; }
-    .projects .project-item.medium {
-      grid-row: span 2;
-      grid-column: span 2; }
-    .projects .project-item.large {
-      grid-row: span 3;
-      grid-column: span; }
-    .projects .project-item.half {
-      grid-row: span 3;
-      grid-column: span 2; }
-    .projects .project-item.tall {
-      grid-row: span 3;
-      grid-column: span 2; }
-    .projects .project-item.wide {
-      grid-row: span 2;
-      grid-column: span 4; }
-    .projects .project-item .overlay {
-      position: absolute;
+  margin-bottom: 1em;
+  padding: 5%;
+  height: 100vh; }
+  .portfolio h2 {
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.3em;
+    font-size: 2.5em; }
+  .portfolio .projects {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 2px;
+    height: 100%; }
+    .portfolio .projects .project-item {
+      position: relative;
+      background: #F66464;
+      color: #353535;
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      background: red;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      opacity: 0;
-      transition: all .5s ease-in; }
-      .projects .project-item .overlay:hover {
-        transition: all .5s ease-in;
-        opacity: 1; }
-      .projects .project-item .overlay .project-title {
-        font-size: 1.55rem;
+      align-items: center;
+      overflow: hidden; }
+      .portfolio .projects .project-item.medium {
+        grid-row: 1 / span 3;
+        grid-column: 1 / span 2; }
+      .portfolio .projects .project-item.half {
+        grid-row: 1 / span 3;
+        grid-column: 3 / span 2; }
+      .portfolio .projects .project-item.half-two {
+        grid-row: 1 / span 2;
+        grid-column: 5 / span 2; }
+      .portfolio .projects .project-item.tall {
+        grid-row: 3 / span 4;
+        grid-column: 5 / span 2; }
+      .portfolio .projects .project-item.wide {
+        grid-row: 4 / span 3;
+        grid-column: 1 / span 4; }
+      .portfolio .projects .project-item .overlay {
+        display: flex;
         position: absolute;
-        top: 1rem; }
-      .projects .project-item .overlay .project-title,
-      .projects .project-item .overlay .project-desc {
-        padding-bottom: 8px; }
-      .projects .project-item .overlay .project-desc {
-        text-align: center;
-        padding: 0.4rem; }
-      .projects .project-item .overlay .project-tech {
-        margin-left: 5px;
-        position: absolute;
+        top: 0;
+        left: 0;
         bottom: 0;
-        font-size: 1.2rem;
-        text-decoration: none;
-        color: #A0CCE3; }
+        right: 0;
+        opacity: 0;
+        padding: 1em;
+        flex-direction: column;
+        justify-content: center;
+        background: red;
+        transition: all .5s ease-in; }
+        .portfolio .projects .project-item .overlay:hover {
+          transition: all .5s ease-in;
+          opacity: 1; }
+        .portfolio .projects .project-item .overlay .project-title {
+          font-size: 1.55rem;
+          position: absolute;
+          top: 1rem; }
+        .portfolio .projects .project-item .overlay .project-title,
+        .portfolio .projects .project-item .overlay .project-desc {
+          padding-bottom: 8px; }
+        .portfolio .projects .project-item .overlay .project-desc {
+          text-align: center;
+          padding: 0.4rem; }
+        .portfolio .projects .project-item .overlay .project-tech {
+          margin-left: 5px;
+          position: absolute;
+          bottom: 0;
+          font-size: 1.2rem;
+          text-decoration: none;
+          color: #A0CCE3; }
 
 @media (max-width: 1300px) {
   .about-me {
@@ -739,24 +743,24 @@ h2 {
     padding: 1em;
     text-align: center; }
     .about-me .about-title {
-      position: initial;
+      position: static;
       font-size: 2.9rem; }
     .about-me .about-subtitle {
       margin: 0 0 5px 0;
       letter-spacing: 0.2em;
       font-size: 1.6rem; } }
 
-@media (max-width: 800px) {
-  .welcome {
-    height: 500px; }
-    .welcome h1 {
-      font-size: 2rem; }
-      .welcome h1 span {
-        font-size: 4.5rem; }
-  .intro {
+@media (max-width: 780px) {
+  #cta-btn, footer {
+    position: relative; }
+  .welcome h1 {
+    font-size: 2rem; }
+    .welcome h1 span {
+      font-size: 4.5rem; }
+  .intro, .quote {
     padding: .25rem;
     width: 100%; }
-    .intro .intro-text {
+    .intro .intro-text, .intro .quote-text, .quote .intro-text, .quote .quote-text {
       max-width: 600px;
       margin: 0 auto;
       position: static;
@@ -767,22 +771,211 @@ h2 {
     text-align: center; }
     .about-me .about-title {
       position: initial;
-      font-size: 1.9rem; }
+      font-size: 2rem; }
     .about-me .about-subtitle {
       margin: 0 0 5px 0;
       letter-spacing: 0.2em;
       font-size: 1.6rem; }
   .portfolio {
-    width: 100%; }
-  .projects {
-    display: block; }
-    .projects .project-item {
-      padding: 10px 0; }
-      .projects .project-item .overlay {
-        display: block;
-        opacity: 1;
-        height: 100%;
-        width: 100%; } }
+    height: 100%;
+    margin: 0 0 15px 0;
+    padding: 15px 0;
+    background: none; }
+    .portfolio h2 {
+      text-align: center;
+      margin-bottom: 10px; }
+    .portfolio .projects {
+      display: block; }
+      .portfolio .projects .project-item {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 12px; }
+        .portfolio .projects .project-item .overlay {
+          padding: .5em;
+          opacity: 1; }
+          .portfolio .projects .project-item .overlay .project-title,
+          .portfolio .projects .project-item .overlay .project-desc,
+          .portfolio .projects .project-item .overlay .project-tech {
+            position: static;
+            margin: 0 auto; }
+          .portfolio .projects .project-item .overlay .project-desc {
+            max-width: 500px; } }
+
+#nav {
+  min-height: 60px;
+  background: #a7a7a7;
+  color: #A0CCE3;
+  overflow: auto;
+  padding: 15px; }
+  #nav .logo {
+    display: inline-block;
+    float: left; }
+    #nav .logo h2 {
+      font-family: "Alegreya Sans SC", sans-serif;
+      font-size: 2.2em;
+      text-transform: uppercase; }
+  #nav .navbar-items {
+    display: inline-block;
+    float: right; }
+    #nav .navbar-items li {
+      display: inline-block;
+      padding: 0 10px;
+      margin-top: 7px; }
+      #nav .navbar-items li:first-child {
+        padding-left: 0; }
+      #nav .navbar-items li a {
+        color: #F66464;
+        float: left;
+        font-size: 1.5em;
+        text-decoration: none;
+        text-transform: uppercase; }
+        #nav .navbar-items li a:hover {
+          transition: all .4s ease-in;
+          color: #A0CCE3; }
+
+#cta-btn {
+  text-align: center;
+  padding: 1.5em 0; }
+  #cta-btn .text {
+    padding: .8em 0;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 550px; }
+  #cta-btn .btn p {
+    margin: .8em 0;
+    font-size: 1.2em; }
+  #cta-btn .btn button {
+    cursor: pointer;
+    color: #ffffff;
+    border: 0;
+    background: #A0CCE3;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    width: 100%;
+    padding: 1em; }
+    #cta-btn .btn button:hover, #cta-btn .btn button:focus {
+      background: #F66464;
+      color: black;
+      outline: 0;
+      transition: background-color 0.3s ease-out; }
+
+.footer {
+  padding: .9em 0;
+  text-align: center; }
+  .footer .media-bar ul li {
+    display: inline-block;
+    padding: 10px; }
+    .footer .media-bar ul li a .ion {
+      font-size: 2.6em; }
+  .footer .name-link {
+    font-size: 1.2em; }
+  .footer a {
+    text-decoration: none;
+    color: #A0CCE3; }
+    .footer a:hover {
+      transition: all .3s ease-in;
+      color: #F66464; }
+
+#drop-menu {
+  background: #ffffff;
+  height: 190px;
+  width: 100%;
+  display: none;
+  position: absolute;
+  top: -190px;
+  z-index: 3;
+  opacity: 0.9; }
+  #drop-menu a {
+    position: relative;
+    color: #A0CCE3;
+    text-align: center;
+    display: block;
+    padding: 7px 0;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    text-decoration: none; }
+    #drop-menu a.active, #drop-menu a:hover {
+      color: #F66464; }
+    #drop-menu a:first-of-type {
+      margin-top: 15px; }
+
+#drop-menu.visible {
+  top: 0px;
+  transition: all 0.5s linear; }
+
+#menu-btn {
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 18px;
+  position: absolute;
+  top: 190px;
+  right: 0px;
+  cursor: pointer;
+  margin: 29px 20px 20px;
+  z-index: 3;
+  transition: all .5s linear; }
+  #menu-btn span {
+    display: block;
+    height: 2px;
+    background: #111;
+    margin-bottom: 4px; }
+    #menu-btn span:first-of-type {
+      height: 3px; }
+    #menu-btn span:nth-child(2) {
+      width: 75%; }
+    #menu-btn span:nth-child(3) {
+      width: 50%; }
+
+#contact {
+  background: #fff;
+  padding: 4em 0; }
+  #contact .container-wrap {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em; }
+  #contact .wrap {
+    box-shadow: 0 0 15px 0 rgba(27, 97, 122, 0.7); }
+  #contact .wrap > * {
+    padding: 1em; }
+  #contact .hiring {
+    text-align: center;
+    font-size: 3em; }
+  #contact form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px; }
+    #contact form label {
+      display: block; }
+    #contact form p {
+      margin: 0; }
+    #contact form button {
+      cursor: pointer;
+      color: #ffffff;
+      border: 0;
+      background: #A0CCE3;
+      text-transform: uppercase; }
+      #contact form button:hover, #contact form button:focus {
+        background: #F66464;
+        color: #353535;
+        outline: 0;
+        transition: background-color 0.3s ease-out; }
+    #contact form .wide {
+      grid-column: 1 / 3; }
+    #contact form input {
+      font-size: 1.1em; }
+    #contact form button,
+    #contact form input,
+    #contact form textarea {
+      width: 100%;
+      padding: 1em; }
+
+@media (max-width: 680px) {
+  #nav .navbar-items {
+    display: none; }
+  #drop-menu {
+    display: block; } }
 
 #AdminMenu {
   background: #302d43;

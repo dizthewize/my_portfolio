@@ -15,41 +15,272 @@ ul {
 
 @import "content-area";
 
-// #nav {
-//   // min-height: 60px;
-//   background: #eee;
-//   color: red;
-//   overflow: auto;
-//   padding: 15px;
-//
-//   .logo {
-//     display: inline-block;
-//     float: left;
-//     h2 {
-//       font-size: 1.5em;
-//       text-transform: uppercase;
-//     }
-//   }
-//
-//   .navbar-items {
-//     display: inline-block;
-//     float: right;
-//     li {
-//       display: inline-block;
-//       padding: 0 10px;
-//
-//       &:first-child {
-//         margin-left: 0;
-//       }
-//       a {
-//         float: left;
-//         font-size: 1.5em;
-//         text-decoration: none;
-//         text-transform: uppercase;
-//       }
-//     }
-//   }
-// }
+#nav {
+  min-height: 60px;
+  background: $gray;
+  color: $accent;
+  overflow: auto;
+  padding: 15px;
+
+  .logo {
+    display: inline-block;
+    float: left;
+    h2 {
+      font-family: $ffHeading;
+      font-size: 2.2em;
+      text-transform: uppercase;
+    }
+  }
+
+  .navbar-items {
+    display: inline-block;
+    float: right;
+    li {
+      display: inline-block;
+      padding: 0 10px;
+      margin-top: 7px;
+
+      &:first-child {
+        padding-left: 0;
+      }
+      a {
+        color: $offsetOrange;
+        float: left;
+        font-size: 1.5em;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+          transition: all .4s ease-in;
+          color: $accent;
+        }
+      }
+    }
+  }
+}
+
+#cta-btn {
+  text-align: center;
+  padding: 1.5em 0;
+  .text {
+    padding: .8em 0;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 550px;
+  }
+
+  .btn {
+    p {
+      margin: .8em 0;
+      font-size: 1.2em;
+    }
+
+    button {
+      cursor: pointer;
+      color: $white;
+      border: 0;
+      background: $accent;
+      text-transform: uppercase;
+      font-size: 1.2em;
+      width: 100%;
+      padding: 1em;
+
+      &:hover,
+      &:focus {
+        background: $offsetOrange;
+        color: black;
+        outline: 0;
+        transition: background-color 0.3s ease-out;
+      }
+    }
+  }
+}
+
+.footer {
+  padding: .9em 0;
+  text-align: center;
+  .media-bar {
+    ul {
+
+      li {
+        display: inline-block;
+        padding: 10px;
+
+        a {
+          .ion {
+            font-size: 2.6em;
+          }
+        }
+      }
+    }
+  }
+  .name-link {
+    font-size: 1.2em;
+  }
+
+  a {
+    text-decoration: none;
+    color: $accent;
+
+    &:hover {
+      transition: all .3s ease-in;
+      color: $offsetOrange;
+    }
+  }
+}
+
+#drop-menu {
+  background: $white;
+  height: 190px;
+  width: 100%;
+  display: none;
+  position: absolute;
+  top: -190px;
+  z-index: 3;
+  opacity: 0.9;
+
+  a {
+    position: relative;
+    color: $accent;
+    text-align: center;
+    // border-bottom: 1px solid #111;
+    display: block;
+    padding: 7px 0;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &.active,
+    &:hover {
+      color: $offsetOrange;
+    }
+
+    &:first-of-type {
+      margin-top: 15px;
+    }
+  }
+
+}
+
+#drop-menu.visible {
+  top: 0px;
+  transition: all 0.5s linear;
+}
+
+#menu-btn {
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 18px;
+  position: absolute;
+  top: 190px;
+  right: 0px;
+  cursor: pointer;
+  margin: 29px 20px 20px;
+  z-index: 3;
+  transition: all .5s linear;
+
+  span {
+    display: block;
+    height: 2px;
+    background: #111;
+    margin-bottom: 4px;
+
+    &:first-of-type {
+      height: 3px;
+    }
+
+    &:nth-child(2) {
+      width: 75%
+    }
+
+    &:nth-child(3) {
+      width: 50%
+    }
+  }
+}
+
+#contact {
+  background: #fff;
+  padding: 4em 0;
+
+  .container-wrap {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+  }
+
+  .wrap {
+    box-shadow: 0 0 15px 0 rgba(27, 97, 122, 0.7)
+  }
+
+  .wrap > * {
+    padding: 1em;
+  }
+  .hiring {
+    text-align: center;
+    font-size: 3em;
+  }
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+
+    label {
+      display: block;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    button {
+      cursor: pointer;
+      color: $white;
+      border: 0;
+      background: $accent;
+      text-transform: uppercase;
+
+      &:hover,
+      &:focus {
+        background: $offsetOrange;
+        color: $black;
+        outline: 0;
+        transition: background-color 0.3s ease-out;
+      }
+    }
+
+    .wide {
+      grid-column: 1 / 3;
+    }
+
+    input {
+      font-size: 1.1em;
+    }
+
+    button,
+    input,
+    textarea {
+      width: 100%;
+      padding: 1em;
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  #nav {
+    .navbar-items {
+      display: none;
+    }
+  }
+
+  #drop-menu {
+    display: block;
+  }
+
+
+}
 //
 // #wrapped {
 //   position: relative;
@@ -129,69 +360,6 @@ ul {
 //   }
 // }
 //
-// #side-menu {
-//   background: #111;
-//   width: 200px;
-//   display: none;
-//   position: absolute;
-//   left: -200px;
-//   top: 0px;
-//   bottom: 0px;
-//   z-index: 3;
-//   opacity: 0.9;
-//
-//   a {
-//     position: relative;
-//     color: #ccc;
-//     width: 200px;
-//     padding: 10px 0;
-//     text-align: center;
-//     border-bottom: 1px solid #111;
-//     display: block;
-//     padding: 10px 0;
-//     font-size: 22px;
-//     text-decoration: none;
-//
-//     :hover {
-//       // color: #6352b0;
-//     }
-//   }
-//
-// }
-//
-// #side-menu.visible {
-//   left: 0px;
-//   transition: left 0.4s linear;
-// }
-//
-// #side-btn {
-//   display: inline-block;
-//   vertical-align: middle;
-//   width: 24px;
-//   height: 15px;
-//   // margin-left: 8px;
-//   position: absolute;
-//   top: 0px;
-//   right: -60px;
-//   cursor: pointer;
-//   margin: 20px;
-//   z-index: 3;
-//
-//   span {
-//     display: block;
-//     height: 4px;
-//     background: #111;
-//     margin-bottom: 5px;
-//
-//     span:nth-child(2) {
-//       width: 75%
-//     }
-//
-//     span:nth-child(3) {
-//       width: 50%
-//     }
-//   }
-// }
 //
 // #about-page {
 //   margin: 5rem 0 2.5rem;
@@ -220,122 +388,7 @@ ul {
 //   }
 // }
 //
-// #contact {
-//   background: #fff;
-//   padding: 4em 0;
 //
-//   .container-wrap {
-//     max-width: 1170px;
-//     margin-left: auto;
-//     margin-right: auto;
-//     padding: 1em;
-//   }
-//
-//   .wrap {
-//     box-shadow: 0 0 15px 0 rgba(27, 97, 122, 0.7)
-//   }
-//
-//   .wrap > * {
-//     padding: 1em;
-//   }
-//   .hiring {
-//     text-align: center;
-//     font-size: 3em;
-//   }
-//   form {
-//     display: grid;
-//     grid-template-columns: 1fr 1fr;
-//     grid-gap: 20px;
-//
-//     label {
-//       display: block;
-//     }
-//
-//     p {
-//       margin: 0;
-//     }
-//
-//     button {
-//       cursor: pointer;
-//       color: #fefefe;
-//       border: 0;
-//       background: rgba(27, 97, 122, 1);
-//       text-transform: uppercase;
-//
-//       &:hover,
-//       &:focus {
-//         background: #fdab00;
-//         color: black;
-//         outline: 0;
-//         transition: background-color 0.3s ease-out;
-//       }
-//     }
-//
-//     .wide {
-//       grid-column: 1 / 3;
-//     }
-//
-//     button,
-//     input,
-//     textarea {
-//       width: 100%;
-//       padding: 1em;
-//     }
-//   }
-// }
-//
-// #cta-btn {
-//   text-align: center;
-//   padding: 4em 0;
-//   .btn {
-//     p {
-//       margin: 0;
-//     }
-//
-//     button {
-//       cursor: pointer;
-//       color: #fefefe;
-//       border: 0;
-//       background: rgba(27, 97, 122, 1);
-//       text-transform: uppercase;
-//
-//       &:hover,
-//       &:focus {
-//         background: #fdab00;
-//         color: black;
-//         outline: 0;
-//         transition: background-color 0.3s ease-out;
-//       }
-//     }
-//
-//     button {
-//       width: 100%;
-//       padding: 1em;
-//     }
-//   }
-// }
-// .footer {
-//   background: #eee;
-//   text-align: center;
-//   .media-bar {
-//     ul {
-//       li {
-//         display: inline-block;
-//         padding: 10px;
-//
-//         a {
-//           .ion {
-//             font-size: 2.6em;
-//           }
-//         }
-//       }
-//     }
-//   }
-//   a {
-//     color: red;
-//     text-decoration: none;
-//   }
-// }
 //
 // @media (max-width: 768px) {
 //   body {

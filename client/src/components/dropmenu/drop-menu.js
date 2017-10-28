@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-class SideMenu extends Component {
+class DropMenu extends Component {
   constructor(props) {
     super(props);
 
@@ -19,20 +19,20 @@ class SideMenu extends Component {
 
   render() {
     return (
-      <div id="side-menu" className={this.state.active ? 'visible' : null }>
-        <div id="side-btn" onClick={this.toggleClass}>
+      <div id="drop-menu" className={this.state.active ? 'visible' : null }>
+        <div id="menu-btn" onClick={this.toggleClass}>
           <span></span>
           <span></span>
           <span></span>
         </div>
 
-          <Link to="/">Home</Link>
+          <Link to="/" className="active">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/projects">Projects</Link>
-          <Link to="/admin">Admin</Link>
+          <Link to="/contact">Contact</Link>
       </div>
     );
   }
 }
 
-export default withRouter(SideMenu);
+export default withRouter(DropMenu);

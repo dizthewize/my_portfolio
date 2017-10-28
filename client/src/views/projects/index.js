@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import ProjectItems from '../../components/projects/projects';
 
 class Projects extends Component {
 
   render() {
     return (
       <div className="container">
-        <h1>Projects Section</h1>
+        <ProjectItems />
       </div>
     );
   }

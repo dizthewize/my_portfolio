@@ -90,6 +90,7 @@ h2 {
   padding: 2em 0;
   // background: $offsetOrange;
   background: url("../img/ali_fight.jpg") no-repeat center top;
+  background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -108,30 +109,31 @@ h2 {
 }
 
 .about-me {
-  // @extend %container;
   padding: 0 0 4em 0;
   position: relative;
-}
 
-.about-title {
-  margin-bottom: .25em;
-  font-family: $ffHeading;
-  color: $accent;
-  position: absolute;
-  top: 1em;
-  right: 3.2em;
-  font-size: 3.5rem;
-}
+  .about-title {
+    position: absolute;
+    top: 1em;
+    right: 3.2em;
+    margin-bottom: .25em;
+    font-family: $ffHeading;
+    color: $accent;
+    font-size: 3.5rem;
+    letter-spacing: 0.1em;
+  }
 
-.about-subtitle {
-  font-size: 2rem;
-  letter-spacing: 0.4em;
-  margin: .4em 0;
-  color: $offsetOrange;
-}
+  .about-subtitle {
+    font-size: 2rem;
+    letter-spacing: 0.4em;
+    margin: .4em 0;
+    color: $offsetOrange;
+  }
 
-.about-text {
-  text-align: center;
+  .about-text {
+    text-align: center;
+    font-size: 1.1em;
+  }
 }
 
 .quote {
@@ -143,6 +145,7 @@ h2 {
   width: 100%;
   padding: 2em 0;
   background: url("../img/mj.jpg") no-repeat center top;
+  background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -162,104 +165,105 @@ h2 {
 }
 
 .portfolio {
-  // @extend %container;
-  padding: 2.5%;
+  margin-bottom: 1em;
+  padding: 5%;
   height: 100vh;
-  background: $gray;
-}
+  h2 {
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.3em;
+    font-size: 2.5em;
+  }
+  .projects {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 2px;
+    height: 100%;
 
-.projects {
-  display: grid;
-  height: 100%;
-  grid-template-rows: repeat(5, 1fr);
-  // grid-template-columns: repeat(6, 1fr);
-  grid-gap: 2px;
-
-  .project-item {
-    position: relative;
-    background: $offsetOrange;
-    color: $black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-
-    &.small {
-      grid-row: span 1;
-      grid-column: span 2;
-    }
-
-    &.medium {
-      grid-row: span 2;
-      grid-column: span 2;
-    }
-
-    &.large {
-      grid-row: span 3;
-      grid-column: span ;
-    }
-
-    &.half {
-      grid-row: span 3;
-      grid-column: span 2;
-    }
-
-    &.tall {
-      grid-row: span 3;
-      grid-column: span 2;
-    }
-
-    &.wide {
-      grid-row: span 2;
-      grid-column: span 4;
-    }
-
-    .overlay {
-      position: absolute;
+    .project-item {
+      position: relative;
+      background: $offsetOrange;
+      color: $black;
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      background: red;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      opacity: 0;
-      transition: all .5s ease-in;
+      align-items: center;
+      overflow: hidden;
 
-      &:hover {
-        transition: all .5s ease-in;
-        opacity: 1;
+      &.medium {
+        grid-row: 1 / span 3;
+        grid-column: 1 / span 2;
       }
 
+      &.half {
+        grid-row: 1 / span 3;
+        grid-column: 3 / span 2;
+      }
 
-      .project-title {
-        font-size: 1.55rem;
+      &.half-two {
+        grid-row: 1 / span 2;
+        grid-column: 5 / span 2;
+      }
+
+      &.tall {
+        grid-row: 3 / span 4;
+        grid-column: 5 / span 2;
+      }
+
+      &.wide {
+        grid-row: 4 / span 3;
+        grid-column: 1 / span 4;
+      }
+
+      .overlay {
+        display: flex;
         position: absolute;
-        top: 1rem;
-      }
-
-      .project-title,
-      .project-desc {
-        padding-bottom: 8px;
-      }
-
-      .project-desc {
-        text-align: center;
-        padding: 0.4rem;
-      }
-
-      .project-tech {
-        margin-left: 5px;
-        position: absolute;
+        top: 0;
+        left: 0;
         bottom: 0;
-        font-size: 1.2rem;
-        text-decoration: none;
-        color: $accent;
+        right: 0;
+        opacity: 0;
+        padding: 1em;
+        flex-direction: column;
+        justify-content: center;
+        background: red;
+        transition: all .5s ease-in;
+
+        &:hover {
+          transition: all .5s ease-in;
+          opacity: 1;
+        }
+
+
+        .project-title {
+          font-size: 1.55rem;
+          position: absolute;
+          top: 1rem;
+        }
+
+        .project-title,
+        .project-desc {
+          padding-bottom: 8px;
+        }
+
+        .project-desc {
+          text-align: center;
+          padding: 0.4rem;
+        }
+
+        .project-tech {
+          margin-left: 5px;
+          position: absolute;
+          bottom: 0;
+          font-size: 1.2rem;
+          text-decoration: none;
+          color: $accent;
+        }
       }
     }
   }
 }
+
 
 @media (max-width: 1300px) {
   .about-me {
@@ -268,7 +272,7 @@ h2 {
     text-align: center;
 
     .about-title {
-      position: initial;
+      position: static;
       font-size: 2.9rem;
     }
 
@@ -280,9 +284,11 @@ h2 {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 780px) {
+  #cta-btn, footer {
+    position: relative;
+  }
   .welcome {
-    height: 500px;
     h1 {
       font-size: 2rem;
 
@@ -292,16 +298,17 @@ h2 {
     }
   }
 
-  .intro {
+  .intro,.quote {
     padding: .25rem;
     width: 100%;
-    .intro-text {
+    .intro-text, .quote-text {
       max-width: 600px;
       margin: 0 auto;
       position: static;
       text-align: center;
     }
   }
+
   .about-me {
     display: block;
     padding: 1em;
@@ -309,7 +316,7 @@ h2 {
 
     .about-title {
       position: initial;
-      font-size: 1.9rem;
+      font-size: 2rem;
     }
 
     .about-subtitle {
@@ -319,19 +326,38 @@ h2 {
     }
   }
   .portfolio {
-    width: 100%;
-  }
-  .projects {
-    display: block;
+    height: 100%;
+    margin: 0 0 15px 0;
+    padding: 15px 0;
+    background: none;
 
-    .project-item {
-      padding: 10px 0;
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
 
-      .overlay {
-        display: block;
-        opacity: 1;
-        height: 100%;
+    .projects {
+      display: block;
+
+      .project-item {
         width: 100%;
+        height: 200px;
+        margin-bottom: 12px;
+
+        .overlay {
+          padding: .5em;
+          opacity: 1;
+          .project-title,
+          .project-desc,
+          .project-tech {
+            position: static;
+            margin: 0 auto;
+          }
+
+          .project-desc {
+            max-width: 500px;
+          }
+        }
       }
     }
   }
