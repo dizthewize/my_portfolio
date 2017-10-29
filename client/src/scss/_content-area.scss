@@ -312,3 +312,116 @@ h2 {
     }
   }
 }
+
+.view-options {
+  text-align: center;
+  margin-top: 1.2em;
+  display: inline-block;
+
+  .view-icons {
+    font-size: 1.5em;
+    float: right;
+
+    i {
+      cursor: pointer;
+      margin-right: 10px;
+    }
+  }
+}
+
+.content-box {
+  margin-top: 20px;
+}
+
+.project-results {
+  margin-bottom: 60px;
+  .project-card {
+    background: #fff;
+    -webkit-box-shadow: 0px 9px 15px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 9px 15px -4px rgba(0,0,0,0.75);
+    box-shadow: 0px 9px 15px -4px rgba(0,0,0,0.75);
+  }
+
+  .project-img {
+    position: relative;
+    color: white;
+    padding: 15px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 200px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+
+    &:hover {
+      .details {
+        opacity: 1;
+      }
+      .address {
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+
+    .details {
+      transition: all 0.5s ease-in-out;
+      opacity: 0;
+      padding: 35px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      -webkit-border-top-left-radius: 5px;
+      -webkit-border-top-right-radius: 5px;
+      -moz-border-radius-topleft: 5px;
+      -moz-border-radius-topright: 5px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4e02e5+0,9d1ced+100 */
+      background: rgba(78,2,229,0.8); /* Old browsers */
+      background: -moz-linear-gradient(-45deg, rgba(78,2,229,0.8) 0%, rgba(157,28,237,0.8) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(-45deg, rgba(78,2,229,0.8) 0%,rgba(157,28,237,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(135deg, rgba(78,2,229,0.8) 0%,rgba(157,28,237,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+      .project-details {
+        display: block;
+        margin: 0 auto;
+
+        p {
+          font-weight: 300;
+          font-size: 1rem;
+          display: block;
+          color: rgba(255,255,255,1);
+          margin-top: 3px;
+          margin-bottom: 5px;
+        }
+      }
+
+    }
+  }
+
+  .bottom-info {
+    padding: 20px 15px;
+    opacity: 1;
+
+    .technologies {
+      font-size: 1rem;
+      display: block;
+      margin-bottom: 10px;
+      color: $offsetOrange;
+    }
+
+    .project-url {
+      font-size: 1.3rem;
+      display: block;
+      color: $medium-gray;
+    }
+  }
+}

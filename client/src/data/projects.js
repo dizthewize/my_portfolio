@@ -1,5 +1,25 @@
 var projectsData = [
   {
+    "title": "VidHub",
+    "description": "A video platform site where clients can search videos through the YouTube database",
+    "technologies": ["HTML5/CSS3", "JavaScript", "React", "YouTubeAPI"],
+    "imgSrc": "img/martez.jpg",
+    "githubUrl": "blank",
+    "liveUrl": "blank",
+    "gridClass": "tall",
+    "type": "web app"
+  },
+  {
+    "title": "VidHub",
+    "description": "A video platform site where clients can search videos through the YouTube database",
+    "technologies": ["HTML5/CSS3", "JavaScript", "React", "YouTubeAPI"],
+    "imgSrc": "img/martez.jpg",
+    "githubUrl": "blank",
+    "liveUrl": "blank",
+    "gridClass": "wide",
+    "type": "web app"
+  },
+  {
     "title": "TechBlog",
     "description": "A full stack blog page on the topic of technology where users can sign up and post images of technology as well",
     "technologies": ["HTML5/CSS3", "JavaScript", "JQuery", "PHP", "Laravel"],
@@ -27,26 +47,6 @@ var projectsData = [
     "githubUrl": "blank",
     "liveUrl": "blank",
     "gridClass": "half-two",
-    "type": "web app"
-  },
-  {
-    "title": "VidHub",
-    "description": "A video platform site where clients can search videos through the YouTube database",
-    "technologies": ["HTML5/CSS3", "JavaScript", "React", "YouTubeAPI"],
-    "imgSrc": "img/martez.jpg",
-    "githubUrl": "blank",
-    "liveUrl": "blank",
-    "gridClass": "tall",
-    "type": "web app"
-  },
-  {
-    "title": "VidHub",
-    "description": "A video platform site where clients can search videos through the YouTube database",
-    "technologies": ["HTML5/CSS3", "JavaScript", "React", "YouTubeAPI"],
-    "imgSrc": "img/martez.jpg",
-    "githubUrl": "blank",
-    "liveUrl": "blank",
-    "gridClass": "wide",
     "type": "web app"
   }
 ]

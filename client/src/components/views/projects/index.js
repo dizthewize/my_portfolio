@@ -1,16 +1,34 @@
 import React, { Component } from 'react';
-import ProjectItems from '../../projects/projects';
-import projectsData from '../../../data/projects';
+import ViewOptions from '../../viewoptions/viewoptions';
 
 class Projects extends Component {
+  constructor() {
+    super();
+    this.state = {
+      view: 'grid'
+    }
+    this.viewChange = this.viewChange.bind(this);
+  }
+
+  viewChange(viewName) {
+    this.setState({
+      view: viewName
+    }, () => {
+      console.log(this.state);
+    });
+  }
+
   render() {
     return (
       <div className="container">
-        <ProjectItems projectsData={projectsData} />
+
+        <ViewOptions
+          viewState={this.state.view}
+          viewChange={this.viewChange} />
+
       </div>
     );
   }
-
 }
 
 export default Projects;

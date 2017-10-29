@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProjectItems = (props) => {
+const GridProjects = (props) => {
   const { projectsData } = props;
   const projectGrid = projectsData.map((project, index) => {
     const imgStyles = {
@@ -15,8 +15,7 @@ const ProjectItems = (props) => {
           <h2 className="project-title">{project.title}</h2>
           <p className="project-desc">{project.description}</p>
           <div className="url-links">
-            <a href="#" className="project-site">Check It Out <i class="ion-arrow-right-c" aria-hidden="true"></i></a>
-            <a href="#" className="project-github"><i className="ion ion-social-github"></i></a>
+            <a href="#" className="project-site">Check It Out <i className="ion-arrow-right-c" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
@@ -93,4 +92,4 @@ const ProjectItems = (props) => {
   );
 }
 
-export default ProjectItems;
+export default GridProjects;

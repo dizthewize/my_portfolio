@@ -7,7 +7,7 @@ import CTAButton from '../../cta/cta';
 // import Header from '../../components/header/header';
 import Intro from '../../intro/intro';
 import Quote from '../../quote/quote';
-import ProjectItems from '../../projects/projects';
+import GridProjects from '../../gridLayout/grid';
 import projectsData from '../../../data/projects';
 
 class Home extends Component {
@@ -24,7 +24,7 @@ class Home extends Component {
           <Intro />
           <AboutMe />
           <Quote />
-          <ProjectItems projectsData={projectsData} />
+          <GridProjects projectsData={projectsData} />
           <CTAButton />
         </div>
         {/* <Footer /> */}
