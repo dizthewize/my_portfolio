@@ -2,6 +2,11 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "proxy": {
+    "/contact/send": {
+      "target": "http://localhost:3001"
+    }
+  },
   "dependencies": {
     "lodash": "^4.17.4",
     "node-sass-chokidar": "0.0.3",

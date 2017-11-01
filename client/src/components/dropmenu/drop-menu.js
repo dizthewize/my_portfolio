@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { NavLink,
+         Link,
+         withRouter } from 'react-router-dom';
 
 class DropMenu extends Component {
   constructor(props) {
@@ -26,10 +28,10 @@ class DropMenu extends Component {
           <span></span>
         </div>
 
-          <Link to="/" className="active">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/projects">Projects</Link>
-          <Link to="/contact">Contact</Link>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/projects">Projects</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
       </div>
     );
   }

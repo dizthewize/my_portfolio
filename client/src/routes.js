@@ -1,5 +1,7 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch,
+          Route,
+          Redirect } from 'react-router-dom';
 import DropMenu from './components/dropmenu/drop-menu';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
@@ -7,6 +9,8 @@ import Home from './components/views/home';
 import About from './components/views/about';
 import Projects from './components/views/projects';
 import Contact from './components/views/contact';
+import ContactSuccess from './components/contact/contactSuccess';
+import ContactError from './components/contact/contactError';
 // import Admin from './components/views/admin';
 
 const Routes = () => {
@@ -20,6 +24,8 @@ const Routes = () => {
         <Route path="/about" component={About} />
         <Route path="/projects" component={Projects} />
         <Route path="/contact" component={Contact} />
+        <Route path="/contact/success" component={ContactSuccess} />
+        <Route path="/contact/error" component={ContactError} />
         {/* <Route path="/admin" component={Admin} /> */}
       </Switch>
 

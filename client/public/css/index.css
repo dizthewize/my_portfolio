@@ -657,15 +657,19 @@ h2 {
       transition: background-color 0.3s ease-out; }
 
 .view-options {
-  text-align: center;
-  margin-top: 1.2em;
-  display: inline-block; }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.3em; }
   .view-options .view-icons {
-    font-size: 1.5em;
-    float: right; }
+    font-size: 1.7em;
+    margin: 0 1em; }
     .view-options .view-icons i {
       cursor: pointer;
-      margin-right: 10px; }
+      margin: 0 .5em; }
+    .view-options .view-icons .fa-th-large {
+      position: relative;
+      top: 2px; }
 
 .content-box {
   margin-top: 20px; }
@@ -734,8 +738,10 @@ h2 {
   .project-results .bottom-info {
     padding: 20px 15px;
     opacity: 1; }
+    .project-results .bottom-info a {
+      text-decoration: none; }
     .project-results .bottom-info .technologies {
-      font-size: 1rem;
+      font-size: .9em;
       display: block;
       margin-bottom: 10px;
       color: #F66464; }

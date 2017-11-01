@@ -1,24 +1,8 @@
 import React, { Component } from 'react';
-import Card from '../cardLayout/card';
-import GridProjects from '../gridLayout/grid';
-import projectsData from '../../data/projects';
 
 export default class ViewOptions extends Component {
   constructor() {
     super()
-
-    this.loopProjects = this.loopProjects.bind(this);
-  }
-
-  loopProjects() {
-    const { view } = this.props.viewState;
-    if(view == "grid") {
-      // Grid Layout
-      return <GridProjects projectsData={projectsData} />
-    } else {
-      // Card Layout
-      return <Card projectsData={projectsData} />
-    }
   }
 
   render() {
@@ -33,8 +17,7 @@ export default class ViewOptions extends Component {
               onClick={this.props.viewChange.bind(null, "card")}></i>
           </div>
         </div>
-
-        {this.loopProjects()}
+        
       </div>
     );
   }
