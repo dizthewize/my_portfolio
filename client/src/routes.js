@@ -11,6 +11,7 @@ import Projects from './components/views/projects';
 import Contact from './components/views/contact';
 import ContactSuccess from './components/contact/contactSuccess';
 import ContactError from './components/contact/contactError';
+import NotFound from './components/notFound/notfound';
 // import Admin from './components/views/admin';
 
 const Routes = () => {
@@ -23,10 +24,11 @@ const Routes = () => {
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/projects" component={Projects} />
-        <Route path="/contact" component={Contact} />
+        <Route exact path="/contact" component={Contact} />
         <Route path="/contact/success" component={ContactSuccess} />
         <Route path="/contact/error" component={ContactError} />
         {/* <Route path="/admin" component={Admin} /> */}
+        <Route component={NotFound} />
       </Switch>
 
       <Footer />
