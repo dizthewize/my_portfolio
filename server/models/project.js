@@ -7,7 +7,7 @@ const projectSchema = new Schema({
   tech: {type: String, required: true},
   type: {type: String, required: true},
   gridClass: {type: String, required: true},
-  liveUrl: {type: String, required: true},
+  liveUrl: {type: String},
   imageFile: {type: String, required: true}
 });
 
