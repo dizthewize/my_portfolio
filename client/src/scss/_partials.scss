@@ -22,6 +22,7 @@
   .navbar-items {
     display: inline-block;
     float: right;
+    margin-top: 5px;
     li {
       display: inline-block;
       padding: 0 10px;
@@ -33,7 +34,7 @@
       a {
         color: $accent;
         float: left;
-        font-size: 1.5em;
+        font-size: 1.2em;
         text-decoration: none;
         text-transform: uppercase;
 

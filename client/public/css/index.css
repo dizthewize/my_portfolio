@@ -289,7 +289,8 @@ ul {
       text-transform: uppercase; }
   #nav .navbar-items {
     display: inline-block;
-    float: right; }
+    float: right;
+    margin-top: 5px; }
     #nav .navbar-items li {
       display: inline-block;
       padding: 0 10px;
@@ -299,7 +300,7 @@ ul {
       #nav .navbar-items li a {
         color: #A0CCE3;
         float: left;
-        font-size: 1.5em;
+        font-size: 1.2em;
         text-decoration: none;
         text-transform: uppercase; }
         #nav .navbar-items li a.active, #nav .navbar-items li a:hover {
@@ -749,6 +750,12 @@ h2 {
       font-size: 1.3rem;
       display: block;
       color: #737373; }
+
+.success-msg {
+  padding: 0 0 4em 0; }
+  .success-msg .success-text {
+    text-align: center;
+    font-size: 1.2em; }
 
 @media (max-width: 900px) {
   #nav .navbar-items {

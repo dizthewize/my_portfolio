@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AboutMe from '../../about/about';
+import AboutMe from '../../About';
 
 class About extends Component {
   render() {

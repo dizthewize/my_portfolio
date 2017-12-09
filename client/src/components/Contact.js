@@ -6,12 +6,30 @@ export default class ContactForm extends Component {
     this.state = {
 
     };
-
+    this.onSubmit = this.onSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  handleInputChange(event) {
-    const target = event.target;
+  onSubmit(e) {
+    e.preventDefault();
+   if (!this.state && this.state.length !== 5) {
+     this.setState({ error: 'Please provide more info' });
+   } else {
+     this.setState({
+       error: ''
+     });
+     this.props.onSubmit({
+       name: this.state.name,
+       company: this.state.company,
+       email: this.state.email,
+       phone: this.state.phone,
+       message: this.state.message
+     });
+   }
+  }
+
+  handleInputChange(e) {
+    const target = e.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
 
@@ -23,17 +41,19 @@ export default class ContactForm extends Component {
   render() {
     return (
       <section id="contact">
+        {this.state.error && <h2 style={{ textAlign: 'center'}}>{this.state.error}</h2>}
         <div className="container-wrap">
           <div className="wrap">
             <div className="info">
               <h1 className="hiring">Hiring? Send me an email</h1>
             </div>
-              <form method="POST" action="http://localhost:3001/contact/send">
+              <form onSubmit={this.onSubmit}>
                 <p>
                   <label htmlFor="name">Name</label>
                   <input
                     type="text"
                     name="name"
+                    value={this.state.value}
                     onChange={this.handleInputChange}/>
                 </p>
                 <p>
@@ -41,6 +61,7 @@ export default class ContactForm extends Component {
                   <input
                     type="text"
                     name="company"
+                    value={this.state.value}
                     onChange={this.handleInputChange}/>
                 </p>
                 <p>
@@ -48,6 +69,7 @@ export default class ContactForm extends Component {
                   <input
                     type="email"
                     name="email"
+                    value={this.state.value}
                     onChange={this.handleInputChange}/>
                 </p>
                 <p>
@@ -55,6 +77,7 @@ export default class ContactForm extends Component {
                   <input
                     type="text"
                     name="phone"
+                    value={this.state.value}
                     onChange={this.handleInputChange}/>
                 </p>
                 <p className="wide">
@@ -62,6 +85,7 @@ export default class ContactForm extends Component {
                   <textarea
                     name="message"
                     rows="5"
+                    value={this.state.value}
                     onChange={this.handleInputChange}></textarea>
                 </p>
                 <p className="wide">
