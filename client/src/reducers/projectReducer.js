@@ -1,9 +1,13 @@
 import { FETCH_PROJECTS } from '../actions/types';
 
-export default function(state = {}, action) {
+const INITIAL_STATE = {
+  all: []
+}
+
+export default function(state = [], action) {
   switch (action.type) {
     case FETCH_PROJECTS:
-      return action.payload;
+      return [ action.payload, ...state ];
     default:
       return state;
   }

@@ -4,20 +4,60 @@ export default class ContactForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      name: '',
+      nameError: '',
+      company: '',
+      companyError: '',
+      email: '',
+      emailError: '',
+      phone: '',
+      phoneError: '',
+      message: ''
     };
     this.onSubmit = this.onSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
+  validate = () => {
+    let isError = false;
+    const errors = {}
+
+    if (this.state.name.length < 5) {
+      isError = true;
+      errors.nameError = 'Is your name mclovin or something?';
+    }
+
+    if (this.state.phone.length < 10) {
+      isError = true;
+      errors.phoneError = 'Is that your real number?';
+    }
+
+    if (!this.state.email) {
+      isError = true;
+      errors.emailError = 'You are missing an email'
+    }
+
+    if (isError) {
+      this.setState({
+        ...this.state,
+        ...errors
+      })
+    }
+
+    return isError;
+  }
+
   onSubmit(e) {
     e.preventDefault();
-   if (!this.state && this.state.length !== 5) {
-     this.setState({ error: 'Please provide more info' });
-   } else {
+
+   const err = this.validate();
+   if (!err) {
      this.setState({
-       error: ''
-     });
+      nameError: '',
+      phoneError: '',
+      emailError: '',
+      success: 'Yout email has been sent'
+     })
      this.props.onSubmit({
        name: this.state.name,
        company: this.state.company,
@@ -41,7 +81,10 @@ export default class ContactForm extends Component {
   render() {
     return (
       <section id="contact">
-        {this.state.error && <h2 style={{ textAlign: 'center'}}>{this.state.error}</h2>}
+        {this.state.nameError && <h2 style={{ textAlign: 'center' }}>{this.state.nameError}</h2>}
+        {this.state.phoneError && <h2 style={{ textAlign: 'center' }}>{this.state.phoneError}</h2>}
+        {this.state.emailError && <h2 style={{ textAlign: 'center' }}>{this.state.emailError}</h2>}
+        {this.state.success && <h2 style={{ textAlign: 'center' }}>{this.state.success}</h2>}
         <div className="container-wrap">
           <div className="wrap">
             <div className="info">
@@ -75,7 +118,7 @@ export default class ContactForm extends Component {
                 <p>
                   <label htmlFor="phone">Phone Number</label>
                   <input
-                    type="text"
+                    type="number"
                     name="phone"
                     value={this.state.value}
                     onChange={this.handleInputChange}/>

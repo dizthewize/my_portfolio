@@ -1,82 +1,61 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
-const Card = (props) => {
-  const { projectsData } = props;
-  const projectCard = projectsData.map((project, index) => {
-    const imgStyles = {
-      backgroundImage: `url(${project.imgSrc})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat"
-    };
-    return (
-      <div key={index} className="col-md-4">
-        <div className="project-card">
+class Card extends Component {
 
-          <div className="project-img" style={imgStyles}>
-            <div className="details">
-              <div className="col-md-12">
-                <div className="projectDesc">
-                  <p>{project.description}</p>
-                </div>
-              </div>
-            </div>
-          </div>
+  renderProject(projectData) {
+    const projects = Object.values(projectData);
+    return projects.map(project => {
+      const imgStyles = {
+        backgroundImage: `url(${project.imageFile})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      };
 
-          <div className="bottom-info">
-            <span className="technologies">{project.technologies}</span>
-            <a href="#">
-              <span className="project-url">{project.title}</span>
-            </a>
-          </div>
+      return (
+        <div key={project._id} className="col-md-3 col-sm-12 col-lg-6">
+          <div className="project-card">
 
-        </div>
-      </div>
-    )
-  });
-  return (
-    <div className="content-box">
-
-      <div className="project-results">
-        <div className="row">
-
-          {projectCard}
-
-          {/* <div className="col-md-4">
-            <div className="project-card">
-
-              <div className="project-img">
-
-                <div className="details">
-
-                  <div className="col-md-12">
-
-                    <div className="projectDesc">
-
-                      <p>Hello</p>
-
-                    </div>
+            <div className="project-img" style={imgStyles}>
+              <div className="details">
+                <div className="col-md-12">
+                  <div className="projectDesc">
+                    <p>{project.description}</p>
                   </div>
-
-
                 </div>
               </div>
-
-              <div className="bottom-info">
-                <span className="technologies">html, css</span>
-                <a href="#">
-                  <span className="project-url">Project title</span>
-                </a>
-              </div>
-
             </div>
-          </div> */}
 
+            <div className="bottom-info">
+              <span className="technologies">{project.tech}</span>
+              <a href={project.liveUrl}>
+                <span className="project-url">{project.title}</span>
+              </a>
+            </div>
+
+          </div>
         </div>
-      </div>
+      )
+    });
+  }
 
-    </div>
-  );
+  render(){
+    return (
+      <div className="content-box">
+
+        <div className="project-results">
+          <div className="row">
+
+            {this.props.project.map(this.renderProject)}
+
+          </div>
+        </div>
+
+      </div>
+    );
+  }
 }
 
 export default Card;

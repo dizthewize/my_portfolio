@@ -10,6 +10,6 @@ export const sendMail = values => async dispatch => {
 }
 
 export const fetchProjects = () => async dispatch => {
-  const res = await axios.post('/api/projects');
+  const res = await axios.get('/api/projects');
   dispatch({ type: FETCH_PROJECTS, payload: res.data });
 }

@@ -11,7 +11,7 @@ module.exports = app => {
       let projectList = {};
 
       projects.forEach((project) => {
-        projectList[project.id] = project;
+        projectList[project] = project;
       });
 
       res.send(projectList);

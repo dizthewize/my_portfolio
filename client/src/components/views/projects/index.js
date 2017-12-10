@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../../actions';
 import Card from '../../cardLayout/card';
 import GridProjects from '../../gridLayout/grid';
 import ViewOptions from '../../viewoptions/viewoptions';
@@ -23,14 +25,16 @@ class Projects extends Component {
   }
 
   projectLoop() {
+    const { project } = this.props;
     if(this.state.view == "grid") {
-      return <GridProjects projectsData={projectsData} />
+      return <GridProjects project={project} />
     } else {
-      return <Card projectsData={projectsData} />
+      return <Card project={project} />
     }
   }
 
   render() {
+    console.log(this.props.project.project);
     return (
       <div className="container">
 
@@ -45,4 +49,8 @@ class Projects extends Component {
   }
 }
 
-export default Projects;
+function mapStateToProps({ project }) {
+  return { project };
+}
+
+export default connect(mapStateToProps, actions)(Projects);

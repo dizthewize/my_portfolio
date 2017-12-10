@@ -11,10 +11,13 @@ import Intro from '../../Intro';
 import Quote from '../../Quote';
 import GridProjects from '../../gridLayout/grid';
 import projectsData from '../../../data/projects';
+import Projects from '../projects';
 
 class Home extends Component {
   constructor() {
     super();
+
+    // this.projectData = this.projectData.bind(this);
   }
 
   componentDidMount() {
@@ -23,8 +26,7 @@ class Home extends Component {
   }
 
   render() {
-    const { projects } = this.props;
-    console.log(projects);
+    const { project } = this.props;
     return (
       <div className="main">
         <Banner />
@@ -32,7 +34,7 @@ class Home extends Component {
           <Intro />
           <AboutMe />
           <Quote />
-          <GridProjects projectsData={projectsData} />
+          <GridProjects project={project} />
           <CTAButton />
         </div>
       </div>
@@ -40,8 +42,8 @@ class Home extends Component {
   }
 }
 
-function mapStateToProps({ projects }) {
-  return{ projects }
+function mapStateToProps({ project }) {
+  return { project };
 }
 
 export default connect(mapStateToProps, actions)(Home);

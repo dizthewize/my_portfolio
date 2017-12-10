@@ -737,7 +737,9 @@ h2 {
           margin-top: 3px;
           margin-bottom: 5px; }
   .project-results .bottom-info {
-    padding: 20px 15px;
+    height: 5.5rem;
+    text-align: center;
+    padding: 1em 0 0 0;
     opacity: 1; }
     .project-results .bottom-info a {
       text-decoration: none; }
@@ -801,7 +803,7 @@ h2 {
       display: block; }
       .portfolio .projects .project-item {
         width: 100%;
-        height: 200px;
+        height: 280px;
         margin-bottom: 12px; }
         .portfolio .projects .project-item .overlay {
           padding: .5em;
@@ -809,10 +811,9 @@ h2 {
           .portfolio .projects .project-item .overlay .project-title,
           .portfolio .projects .project-item .overlay .project-desc,
           .portfolio .projects .project-item .overlay .project-tech {
-            position: static;
             margin: 0 auto; }
           .portfolio .projects .project-item .overlay .project-desc {
-            max-width: 500px; } }
+            max-width: 400px; } }
 
 @media (max-width: 1300px) {
   .about-me {
