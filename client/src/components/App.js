@@ -3,6 +3,9 @@ import {
   BrowserRouter,
   Switch,
   Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
+
 import DropMenu from './DropMenu';
 import Header from './Header';
 import Footer from './Footer';
@@ -14,6 +17,11 @@ import NotFound from './NotFound';
 // import Admin from './components/views/admin';
 
 class App extends Component {
+  componentDidMount() {
+    const { fetchProjects } = this.props;
+    fetchProjects();
+  }
+
   render() {
     return (
       <div className="site">
@@ -36,4 +44,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(null, actions)(App)

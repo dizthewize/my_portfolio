@@ -21,8 +21,8 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    const { fetchProjects } = this.props;
-    fetchProjects();
+    // const { fetchProjects } = this.props;
+    // fetchProjects();
   }
 
   render() {
@@ -46,4 +46,4 @@ function mapStateToProps({ project }) {
   return { project };
 }
 
-export default connect(mapStateToProps, actions)(Home);
+export default connect(mapStateToProps)(Home);
