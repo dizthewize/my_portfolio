@@ -13,7 +13,7 @@ const Footer = () => (
       </ul>
     </div>
     <p>&copy;2017 Designed by <span>
-        <a href="https://martezconner.me" className="name-link">Martez Conner</a>
+        <a href="https://martezconner.herokuapp.com" className="name-link">Martez Conner</a>
       </span>
     </p>
   </footer>

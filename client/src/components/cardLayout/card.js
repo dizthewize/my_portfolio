@@ -29,7 +29,6 @@ class Card extends Component {
             </div>
 
             <div className="bottom-info">
-              <span className="technologies">{project.tech}</span>
               <a href={project.liveUrl}>
                 <span className="project-url">{project.title}</span>
               </a>

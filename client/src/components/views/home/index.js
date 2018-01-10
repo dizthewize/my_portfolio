@@ -9,6 +9,7 @@ import CTAButton from '../../Cta-Btn';
 // import Header from '../../components/header/header';
 import Intro from '../../Intro';
 import Quote from '../../Quote';
+import Card from '../../cardLayout/card'
 import GridProjects from '../../gridLayout/grid';
 import projectsData from '../../../data/projects';
 import Projects from '../projects';
@@ -34,7 +35,7 @@ class Home extends Component {
           <Intro />
           <AboutMe />
           <Quote />
-          <GridProjects project={project} />
+          <Card project={project} />
           <CTAButton />
         </div>
       </div>

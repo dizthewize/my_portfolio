@@ -12,8 +12,8 @@ class Projects extends Component {
     this.state = {
       view: 'grid'
     }
-    this.viewChange = this.viewChange.bind(this);
-    this.projectLoop = this.projectLoop.bind(this);
+    // this.viewChange = this.viewChange.bind(this);
+    // this.projectLoop = this.projectLoop.bind(this);
   }
 
   viewChange(viewName) {
@@ -24,25 +24,25 @@ class Projects extends Component {
     });
   }
 
-  projectLoop() {
-    const { project } = this.props;
-    if(this.state.view == "grid") {
-      return <GridProjects project={project} />
-    } else {
-      return <Card project={project} />
-    }
-  }
+  // projectLoop() {
+  //   const { project } = this.props;
+  //   if(this.state.view == "grid") {
+  //     return <GridProjects project={project} />
+  //   } else {
+  //     return <Card project={project} />
+  //   }
+  // }
 
   render() {
-    console.log(this.props.project.project);
+    const { project } = this.props
     return (
       <div className="container">
 
-        <ViewOptions
+        {/* <ViewOptions
           viewState={this.state.view}
-          viewChange={this.viewChange} />
+          viewChange={this.viewChange} /> */}
 
-        {this.projectLoop()}
+        <Card project={project} />
 
       </div>
     );
