@@ -15,16 +15,6 @@ import projectsData from '../../../data/projects';
 import Projects from '../projects';
 
 class Home extends Component {
-  constructor() {
-    super();
-
-    // this.projectData = this.projectData.bind(this);
-  }
-
-  componentDidMount() {
-    // const { fetchProjects } = this.props;
-    // fetchProjects();
-  }
 
   render() {
     const { project } = this.props;
